@@ -1,0 +1,116 @@
+body {
+  color: aliceblue;
+}
+
+/* Configuração do Grid de 3 colunas */
+.layout-detalhes {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr minmax(250px, 320px);
+  gap: 30px;
+  padding: 40px 20px;
+  align-items: start;
+  flex: 1;
+}
+
+/* Blocos de Sessões de Filmes */
+.sessao-hoje,
+.sessao-amanha {
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.sessao-hoje {
+  color: rgb(10, 10, 10);
+  border-left: 5px solid #00c853;
+}
+
+.sessao-amanha {
+  color: red;
+  border-left: 5px solid red;
+}
+
+.sessao-hoje:hover,
+.sessao-amanha:hover {
+  transform: scale(1.02);
+  background-color: #e0e0e0;
+  filter: drop-shadow(0 0 10px rgba(244, 242, 242, 0.58));
+}
+
+/* Controle do Vídeo Central */
+.secao-trailer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.video-container {
+  background-color: #000;
+  border: 2px dashed #555;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+}
+
+/* Painel de Ingressos */
+.caixa-compra {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 8px;
+  border: 4px dashed;
+  border-image: repeating-linear-gradient(
+      45deg,
+      red,
+      red 15px,
+      #00c853 15px,
+      #00c853 30px
+    )
+    10;
+}
+
+.caixa-compra h2 {
+  font-size: 22px;
+}
+
+.caixa-compra p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.botao-comprar {
+  display: inline-block;
+  background-color: red;
+  color: white !important;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.botao-comprar:hover {
+  background-color: darkred;
+  transform: scale(1.15);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .layout-detalhes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,117 @@
+/* Área de Pesquisa com a Lupa via CSS */
+.pesquisa-bloco {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.pesquisa-caixa {
+  width: 35px;
+  height: 35px;
+  background-color: #e0e0e0;
+  border-radius: 40px;
+  transition: width 0.5s ease;
+  display: flex;
+  padding: 6px;
+  overflow: hidden;
+}
+
+.pesquisa-caixa:hover,
+.pesquisa-caixa:focus-within {
+  width: 260px;
+}
+
+.pesquisa-caixa input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 14px;
+
+  /* Ícone vetorial da Lupa */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 3px center;
+  background-size: 16px;
+  padding-left: 28px;
+}
+
+/* Layout Principal da Home */
+.conteudo-home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Lista de Cinemas */
+.lista-cinemas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.botao-cinema {
+  display: flex;
+  color: rgb(13, 13, 13);
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.2s;
+}
+
+.botao-cinema:hover {
+  transform: scale(1.02);
+  background-color: #e0e0e0;
+  filter: drop-shadow(0 0 10px rgba(244, 242, 242, 0.58));
+}
+
+/* Vitrine de Filmes */
+.vitrine-filmes {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.grade-cartazes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.grade-cartazes img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    filter 0.3s;
+}
+
+.grade-cartazes img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 0 10px rgba(244, 242, 242, 0.58));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .lista-cinemas {
+    grid-template-columns: 1fr;
+  }
+  .grade-cartazes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

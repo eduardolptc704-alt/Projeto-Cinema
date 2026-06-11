@@ -1,0 +1,140 @@
+/* Reset e configurações base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: radial-gradient(
+    rgba(4, 12, 79, 0.985),
+    rgba(0, 2, 13, 0.985)
+  );
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Estrutura do Cabeçalho Principal */
+header {
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 25px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Menu Lateral Oculto (Hambúrguer) */
+.menu-bloco {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.menu-controle {
+  display: none;
+}
+
+.menu-icone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-icone span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.menu-lista {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: rgba(0, 2, 13, 0.95);
+  border: 1px solid #555;
+  border-radius: 5px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+}
+
+.menu-lista a {
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.menu-lista a:hover {
+  background-color: red;
+}
+
+.menu-controle:checked ~ .menu-lista {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Estrutura do Rodapé */
+.rodape-principal {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Transforma o título em um container flexível para alinhar as setas nas pontas */
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaço entre as setas e o texto */
+  font-size: 24px;
+}
+
+/* Estilo visual das setas de navegação */
+.seta-link {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  user-select: none; /* Evita que a seta seja selecionada por clique duplo */
+  transition: background-color 0.2s;
+}
+
+.seta-link:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Garante que o texto do meio não quebre linha em telas muito pequenas */
+header h1 span {
+  white-space: nowrap;
+}
